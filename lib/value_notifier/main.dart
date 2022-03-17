@@ -61,7 +61,9 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Contact Page")),
+      appBar: AppBar(
+        title: const Text("Contact Page"),
+      ),
       body: ValueListenableBuilder(
         builder: (BuildContext context, value, Widget? child) {
           final contacts = value as List<Contact>;
