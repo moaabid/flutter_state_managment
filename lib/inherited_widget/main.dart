@@ -73,6 +73,7 @@ class DateTimeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final api = ApiProvider.of(context).api;
+    devtool.log('${api.dateTime}');
     return Text(api.dateTime ?? "Tap to fetch date and time");
   }
 }
@@ -88,8 +89,6 @@ class ApiProvider extends InheritedWidget {
   @override
   bool updateShouldNotify(covariant ApiProvider oldWidget) {
     devtool.log('updateShouldNotify');
-    devtool.log(uuid.toString());
-    devtool.log(oldWidget.uuid.toString());
     return uuid != oldWidget.uuid;
   }
 
